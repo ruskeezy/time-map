@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
     <title>Time Map</title>
   </head>
   <body>
@@ -10,12 +11,39 @@
     </header>
     <section id="default-categories">
       <ul class="default">
-        <li>Athletics</li>
-        <li>Leisure</li>
-        <li>Work</li>
-        <li>Chores</li>
-        <li>Your Activities</li>
+        <li><a>Athletics
+          <ul>
+            <li><a>Running</a></li>
+            <li><a>Lifting</a></li>
+            <li><a>Cycling</a></li>
+          </ul>
+        </a></li>
+        <li><a>Leisure
+          <ul>
+            <li><a>TV</a></li>
+            <li><a>Reading</a></li>
+            <li><a>Music</a></li>
+          </ul>
+        </a></li>
+        <li><a>Work
+          <ul>
+            <li><a>Meetings</a></li>
+            <li><a>Projects</a></li>
+            <li><a>Programming</a></li>
+          </ul>
+        </a></li>
+        <li><a>Your Activities
+          <ul>
+            <li><a></a></li>
+            <li><a></a></li>
+            <li><a></a></li>
+          </ul>
+        </a></li>
       </ul>
+    </section>
+    <section class="activity-form">
+        <input id="activity-field" >
+        <button type="button" onclick="addActivity()" value="Submit">Submit</button>
     </section>
   </body>
 </html>
