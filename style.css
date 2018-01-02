@@ -8,7 +8,7 @@ body {
 h1 {
   text-align: center;
   font-size: 40px;
-  
+
 }
 
 ul {
@@ -44,4 +44,42 @@ ul li ul li {
 
 ul li:hover ul li {
   display: block;
+}
+
+.submitButton {
+  background-color: rgb(240, 183, 58);
+  color:rgb(33, 69, 52);
+  padding: 15px 32px;
+  margin: 2px;
+  display: inline;
+}
+
+.startButton {
+  background-color: rgb(240, 183, 58);
+  color:rgb(33, 69, 52);
+  padding: 15px 32px;
+  margin: 2px;
+  display: inline;
+}
+
+.stopButton {
+  background-color: rgb(240, 183, 58);
+  color:rgb(33, 69, 52);
+  padding: 15px 32px;
+  display: inline;
+}
+
+.startButton:hover {
+  background-color: rgb(2, 3, 0);
+  color: rgb(250, 245, 248);
+}
+
+.stopButton:hover {
+  background-color: rgb(2, 3, 0);
+  color: rgb(250, 245, 248);
+}
+
+.submitButton:hover {
+  background-color: rgb(2, 3, 0);
+  color: rgb(250, 245, 248);
 }
