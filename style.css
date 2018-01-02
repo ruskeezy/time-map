@@ -46,7 +46,13 @@ ul li:hover ul li {
   display: block;
 }
 
-.submitButton {
+#my-chart {
+  margin: auto;
+  width: 50%;
+  margin-top: 20px;
+}
+
+.submit-button {
   background-color: rgb(240, 183, 58);
   color:rgb(33, 69, 52);
   padding: 15px 32px;
@@ -54,7 +60,7 @@ ul li:hover ul li {
   display: inline;
 }
 
-.startButton {
+.start-button {
   background-color: rgb(240, 183, 58);
   color:rgb(33, 69, 52);
   padding: 15px 32px;
@@ -62,24 +68,24 @@ ul li:hover ul li {
   display: inline;
 }
 
-.stopButton {
+.stop-button {
   background-color: rgb(240, 183, 58);
   color:rgb(33, 69, 52);
   padding: 15px 32px;
   display: inline;
 }
 
-.startButton:hover {
+.start-button:hover {
   background-color: rgb(2, 3, 0);
   color: rgb(250, 245, 248);
 }
 
-.stopButton:hover {
+.stop-button:hover {
   background-color: rgb(2, 3, 0);
   color: rgb(250, 245, 248);
 }
 
-.submitButton:hover {
+.submit-button:hover {
   background-color: rgb(2, 3, 0);
   color: rgb(250, 245, 248);
 }
