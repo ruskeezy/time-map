@@ -6,6 +6,7 @@ var stopTime;
 var ul = document.getElementById('activity-list');
 var selectedActivity;
 
+
 function start() {
   startTime = Date.now();
 }
@@ -33,16 +34,16 @@ new Activity('Reading');
 
 for(var i = 0; i < activities.length; i ++){
   (function() {
-      var activity = activities[i];
-      var liEl = document.createElement('li');
-      var aEl = document.createElement('a');
-      aEl.innerText = activities[i].name;
-      liEl.appendChild(aEl);
-      liEl.addEventListener('click', function() {
-        selectedActivity = activity;
-      })
-      ul.appendChild(liEl);
-  }())
+    var activity = activities[i];
+    var liEl = document.createElement('li');
+    var aEl = document.createElement('a');
+    aEl.innerText = activities[i].name;
+    liEl.appendChild(aEl);
+    liEl.addEventListener('click', function() {
+      selectedActivity = activity;
+    });
+    ul.appendChild(liEl);
+  }());
 }
 
 // add click handlers to start and stop button
