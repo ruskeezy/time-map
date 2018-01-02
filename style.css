@@ -46,6 +46,15 @@ ul li:hover ul li {
   display: block;
 }
 
+<<<<<<< HEAD
+=======
+#my-chart {
+  margin: auto;
+  width: 50%;
+  margin-top: 20px;
+}
+
+>>>>>>> bcfcdbe653692d93293387f4fcd2b4038770612b
 .submit-button {
   background-color: rgb(240, 183, 58);
   color:rgb(33, 69, 52);
