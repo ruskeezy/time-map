@@ -31,35 +31,46 @@ new Activity('Lifting');
 new Activity('Music');
 new Activity('Reading');
 
-for(var i = 0; i < activities.length; i ++){
-  (function() {
-      var activity = activities[i];
-      var liEl = document.createElement('li');
-      var aEl = document.createElement('a');
-      aEl.innerText = activities[i].name;
-      liEl.appendChild(aEl);
-      liEl.addEventListener('click', function() {
-        selectedActivity = activity;
-      })
-      ul.appendChild(liEl);
-  }())
-}
+// for(var i = 0; i < activities.length; i ++){
+//   (function() {
+//       var activity = activities[i];
+//       var liEl = document.createElement('li');
+//       var aEl = document.createElement('a');
+//       aEl.innerText = activities[i].name;
+//       liEl.appendChild(aEl);
+//       liEl.addEventListener('click', function() {
+//         selectedActivity = activity;
+//       })
+//       ul.appendChild(liEl);
+//   }())
+// }
 
 // add click handlers to start and stop button
 
-// var myDoughnutChart = new Chart(ctx, {
-//     type: 'doughnut',
-//     data = {
-//     datasets: [{
-//         data: [10, 20, 30]
-//     }],
-//
-//     // These labels appear in the legend and in the tooltips when hovering different arcs
-//     labels: [
-//         'Red',
-//         'Yellow',
-//         'Blue'
-//     ]
-// };
-//     options: options
-// });
+
+function chartMaker() {
+  var chartPlace = document.getElementById('my-chart')
+  var ctx = chartPlace.getContext('2d');
+  var myDoughnutChart =
+      new Chart(ctx, {
+      type: 'doughnut',
+      cutoutPercentage: 50,
+      data: {
+      datasets: [{
+          data: [10, 20, 30]
+      }],
+
+      // These labels appear in the legend and in the tooltips when hovering different arcs
+      labels: [
+          'Red',
+          'Yellow',
+          'Blue'
+      ],
+    },
+    options: {
+      responsive: false
+    }
+  });
+}
+
+chartMaker();
