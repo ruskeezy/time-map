@@ -12,12 +12,10 @@ function start() {
 
 function stop(){
   stopTime = Date.now();
-  console.log(stopTime - startTime);
-  selectedActivity.total += stopTime - startTime;
-  // set start and stop to null
+  console.log(selectedActivity.total += ((stopTime - startTime) / 1000));
+  startTime = null;
+  stopTime = null;
 }
-
-// function
 
 function Activity (name) {
   this.name = name;
