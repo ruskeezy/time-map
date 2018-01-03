@@ -132,7 +132,7 @@ function addActivity(event) {
   console.log('ul.innerHTML', ul.innerHTML);
   ul.innerHTML = '<li>' + addedActivity.name + '</li>';
 
-  // grab ul dynamically create an li, inside the li is the text of name
+  // grab ul dynamically create an li, inside the li is the text of name -- good stuff pushed up??
 
 };
 
