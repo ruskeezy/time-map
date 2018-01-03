@@ -11,6 +11,16 @@ h1 {
 
 }
 
+.default {
+
+
+}
+
+#dropdown {
+  margin: 0 auto;
+  width: 800px;
+}
+
 ul {
   margin: 0px;
   padding: 0px;
@@ -52,12 +62,25 @@ ul li:hover ul li {
   margin-top: 20px;
 }
 
+#activity-field {
+  padding: 12px;
+  margin-right: 10px;
+}
+
+.button-class {
+  margin: 0 auto;
+  width: 500px;
+  margin-top: 100px;
+}
+
 .submit-button {
   background-color: rgb(240, 183, 58);
   color:rgb(33, 69, 52);
   padding: 15px 32px;
   margin: 2px;
   display: inline;
+  margin: auto;
+
 }
 
 .start-button {
