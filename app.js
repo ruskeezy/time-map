@@ -1,7 +1,6 @@
 'use strict';
 
 // grabbing html elements
-
 var run = document.getElementById('running');
 var lift = document.getElementById('lifting');
 var cycle = document.getElementById('cycling');
@@ -28,9 +27,18 @@ function start() {
 // stop function, connected to stop button. converts to seconds
 function stop(){
   stopTime = Date.now();
-  console.log(selectedActivity.total += ((stopTime - startTime) / 1000));
+  selectedActivity.total += ((stopTime - startTime) / 1000)
+  console.log('stop', selectedActivity);
   startTime = null;
   stopTime = null;
+}
+
+function getTotals() {
+  var activityTotals = [];
+  for(var i = 0; i < activities.length; i++) {
+    activityTotals.push(activities[i].total)
+  }
+  return activityTotals
 }
 
 // constructor function
@@ -90,15 +98,15 @@ program.addEventListener('click', function(){
 })
 
 // form creates a new object
-function addActivity(event){
-  event.preventDefault();
-
-  var name = event.target.name.value;
-  new Activity(name);
-  form.reset();
-}
-
-form.addEventListener('submit', addActivity);
+// function addActivity(event){
+//   event.preventDefault();
+//
+//   var name = event.target.name.value;
+//   new Activity(name);
+//   form.reset();
+// }
+//
+// form.addEventListener('submit', addActivity);
 
 // chart maker
 function chartMaker() {
@@ -111,7 +119,7 @@ function chartMaker() {
           cutoutPercentage: 50,
           data: {
             datasets: [{
-              data: [10, 20, 30, 20],
+              data: getTotals(),
               backgroundColor: [
                   'Red',
                   'Yellow',
@@ -130,7 +138,7 @@ function chartMaker() {
         // options:
         //   maintainAspectRatio: true,
       }
-chartMaker();
+
 
 
 // for(var i = 0; i < activities.length; i ++){
