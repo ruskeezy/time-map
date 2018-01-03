@@ -3,9 +3,12 @@ body {
   background-size: cover;
   font-family: Arial;
   color: white;
+  /*width: 960px;*/
 }
 
 h1 {
+  margin: 0 auto;
+  width: 17%;
   text-align: center;
   font-size: 40px;
 
@@ -64,13 +67,19 @@ ul li:hover ul li {
 
 #activity-field {
   padding: 12px;
-  margin-right: 10px;
+  /*margin-right: 10px;*/
+}
+
+.button-class-one {
+  margin: 0 auto;
+  width: 17%;
+  margin-top: 75px;
 }
 
 .button-class {
   margin: 0 auto;
-  width: 500px;
-  margin-top: 100px;
+  width: 17%;
+  margin-top: 20px;
 }
 
 .submit-button {

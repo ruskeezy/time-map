@@ -51,26 +51,36 @@ new Activity('Reading');
 function chartMaker() {
   var chartPlace = document.getElementById('my-chart')
   var ctx = chartPlace.getContext('2d');
-  var myDoughnutChart =
-      new Chart(ctx, {
-      type: 'doughnut',
-      cutoutPercentage: 50,
-      data: {
-      datasets: [{
-          data: [10, 20, 30]
-      }],
+  var myDoughnutChart = new Chart(ctx, {
+          type: 'doughnut',
+          cutoutPercentage: 50,
+          data: {
+            datasets: [{
+              data: [10, 20, 30, 20],
+              backgroundColor: [
+                  'Red',
+                  'Yellow',
+                  'Blue',
+                  'Purple'
+              ]
+            }],
+            labels: [
+                'Red',
+                'Yellow',
+                'Blue',
+                'Purple'
+            ],
+          }
+        })
+      }
 
       // These labels appear in the legend and in the tooltips when hovering different arcs
-      labels: [
-          'Red',
-          'Yellow',
-          'Blue'
-      ],
-    },
-    options: {
-      responsive: false
-    }
-  });
-}
+
+//     },
+//     options: {
+//       responsive: false
+//     }
+//   });
+// }
 
 chartMaker();
