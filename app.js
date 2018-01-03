@@ -10,7 +10,8 @@ var read = document.getElementById('reading');
 var music = document.getElementById('music');
 var meeting = document.getElementById('meetings');
 var project = document.getElementById('projects');
-var program = document.getElementById('programming')
+var program = document.getElementById('programming');
+var form = document.getElementById('activity-field');
 
 // global variables
 var activities = [];
@@ -88,7 +89,18 @@ program.addEventListener('click', function(){
   console.log(selectedActivity);
 })
 
+// form creates a new object
+function addActivity(event){
+  event.preventDefault();
 
+  var name = event.target.name.value;
+  new Activity(name);
+  form.reset();
+}
+
+form.addEventListener('submit', addActivity);
+
+// chart maker
 function chartMaker() {
   var chartPlace = document.getElementById('my-chart')
   var ctx = chartPlace.getContext('2d');
@@ -113,7 +125,6 @@ function chartMaker() {
     }
   });
 }
-
 chartMaker();
 
 
