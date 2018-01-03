@@ -63,18 +63,20 @@ ul li:hover ul li {
   margin: auto;
   /*width: 50%;*/
   margin-top: 20px;
-  width: 400px;
-  height: 400px;
+  /*width: 400px;
+  height: 400px;*/
 }
 
 #activity-field {
-  padding: 12px;
+  padding: 15px;
+  font-size: 12px;
+  border-radius: 8px;
   /*margin-right: 10px;*/
 }
 
 .button-class-one {
   margin: 0 auto;
-  width: 17%;
+  width: 27%;
   margin-top: 175px;
 }
 
@@ -89,6 +91,8 @@ ul li:hover ul li {
   color:rgb(33, 69, 52);
   padding: 15px 32px;
   margin: 2px;
+  font-size: 20px;
+  border-radius: 8px;
   /*display: inline;*/
 
 
@@ -97,15 +101,19 @@ ul li:hover ul li {
 .start-button {
   background-color: rgb(240, 183, 58);
   color:rgb(33, 69, 52);
-  padding: 15px 32px;
+  padding: 20px 60px;
   margin: 2px;
+  font-size: 20px;
+  border-radius: 8px;
   display: inline;
 }
 
 .stop-button {
   background-color: rgb(240, 183, 58);
   color:rgb(33, 69, 52);
-  padding: 15px 32px;
+  padding: 20px 60px;
+  font-size: 20px;
+  border-radius: 8px;
   display: inline;
 }
 

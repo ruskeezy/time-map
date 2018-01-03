@@ -92,6 +92,8 @@ program.addEventListener('click', function(){
 function chartMaker() {
   var chartPlace = document.getElementById('my-chart')
   var ctx = chartPlace.getContext('2d');
+  ctx.canvas.width = 300;
+  ctx.canvas.height = 300;
   var myDoughnutChart = new Chart(ctx, {
           type: 'doughnut',
           cutoutPercentage: 50,
@@ -113,16 +115,9 @@ function chartMaker() {
             ],
           }
         })
+        // options:
+        //   maintainAspectRatio: true,
       }
-
-      // These labels appear in the legend and in the tooltips when hovering different arcs
-
-//     },
-//     options: {
-//       responsive: false
-//     }
-//   });
-// }
 
 chartMaker();
 
