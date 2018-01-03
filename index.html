@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <!-- <link rel="stylesheet" href="reset.css"> -->
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <title>Time Map</title>
   </head>
@@ -42,17 +42,19 @@
       </a></li>
       </ul>
     </section>
-    <section>
 
-    </section>
-    <section class= "button-class">
-      <input id="activity-field">
-      <button class="submit-button" type="button" onclick="addActivity()" value="Submit">Submit</button>
+    <section class= "button-class-one">
       <button class="start-button" type="button" onclick="start()" value="Submit">Start</button>
       <button class="stop-button" type="button" onclick="stop()" value="Submit">Stop</button>
     </section>
 
-    <canvas id="my-chart" width="500" height="500"></canvas>
+    <section class= "button-class">
+      <input id="activity-field">
+      <button class="submit-button" type="button" onclick="addActivity()" value="Submit">Submit</button>
+    </section>
+
+
+    <canvas id="my-chart"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="app.js"></script>
   </body>
