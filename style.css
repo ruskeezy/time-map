@@ -61,8 +61,10 @@ ul li:hover ul li {
 
 #my-chart {
   margin: auto;
-  width: 50%;
+  /*width: 50%;*/
   margin-top: 20px;
+  width: 400px;
+  height: 400px;
 }
 
 #activity-field {
@@ -73,12 +75,12 @@ ul li:hover ul li {
 .button-class-one {
   margin: 0 auto;
   width: 17%;
-  margin-top: 75px;
+  margin-top: 175px;
 }
 
 .button-class {
   margin: 0 auto;
-  width: 17%;
+  width: 23%;
   margin-top: 20px;
 }
 
@@ -87,8 +89,8 @@ ul li:hover ul li {
   color:rgb(33, 69, 52);
   padding: 15px 32px;
   margin: 2px;
-  display: inline;
-  margin: auto;
+  /*display: inline;*/
+
 
 }
 

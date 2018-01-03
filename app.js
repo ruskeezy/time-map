@@ -106,10 +106,10 @@ function chartMaker() {
               ]
             }],
             labels: [
-                'Red',
-                'Yellow',
-                'Blue',
-                'Purple'
+                'Athletics',
+                'Leisure',
+                'Work',
+                'Your Activities'
             ],
           }
         })
