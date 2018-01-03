@@ -18,24 +18,8 @@ var form = document.getElementById('the-form');
 var activities = [];
 var startTime;
 var stopTime;
+var selectedActivity;
 var ul = document.getElementById('addActivity');
-
-<<<<<<< HEAD
-// start function, connected to start button
-=======
-
->>>>>>> ca0d1a6a19226542bc32a79ce713a2745634804e
-function start() {
-  startTime = Date.now();
-}
-
-// stop function, connected to stop button. converts to seconds
-function stop(){
-  stopTime = Date.now();
-  console.log(selectedActivity.total += ((stopTime - startTime) / 1000));
-  startTime = null;
-  stopTime = null;
-}
 
 // constructor function
 function Activity (name) {
@@ -55,7 +39,9 @@ new Activity('Meetings');
 new Activity('Projects');
 new Activity('Programming');
 
-// click handlers
+console.log('activities', activities);
+
+//click handlers
 run.addEventListener('click', function(){
   selectedActivity = activities[0]
   console.log(selectedActivity);
@@ -92,6 +78,27 @@ program.addEventListener('click', function(){
   selectedActivity = activities[8]
   console.log(selectedActivity);
 })
+
+
+// start function, connected to start button
+function start() {
+  startTime = Date.now();
+}
+
+// stop function, connected to stop button. converts to seconds
+function stop(){
+  stopTime = Date.now();
+  if (!startTime) {
+    console.log('Please push Start');
+  } else {
+    console.log(selectedActivity.total += ((stopTime - startTime) / 1000));
+    startTime = null;
+    stopTime = null;
+  }
+}
+
+
+
 
 
 function chartMaker() {
