@@ -20,7 +20,11 @@ var startTime;
 var stopTime;
 var ul = document.getElementById('addActivity');
 
+<<<<<<< HEAD
 // start function, connected to start button
+=======
+
+>>>>>>> ca0d1a6a19226542bc32a79ce713a2745634804e
 function start() {
   startTime = Date.now();
 }
