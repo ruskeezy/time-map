@@ -10,9 +10,9 @@ var music = document.getElementById('music');
 var meeting = document.getElementById('meetings');
 var project = document.getElementById('projects');
 var program = document.getElementById('programming');
-
-
 var form = document.getElementById('the-form');
+var startbtn = document.getElementById('start-btn');
+var stopbtn = document.getElementById('stop-btn');
 
 
 // global variables
@@ -87,19 +87,9 @@ project.addEventListener('click', function(){
 program.addEventListener('click', function(){
   selectedActivity = activities[8]
   console.log(selectedActivity);
-})
-
-// form creates a new object
-// function addActivity(event){
-//   event.preventDefault();
-//
-//   var name = event.target.name.value;
-//   new Activity(name);
-//   form.reset();
-// }
-//
-// form.addEventListener('submit', addActivity);
-
+});
+startbtn.addEventListener('click', start);
+stopbtn.addEventListener('click', stop);
 
 // start function, connected to start button
 function start() {
@@ -118,81 +108,57 @@ function stop(){
   }
 }
 
-
-
-
-
-
 // chart maker
 function chartMaker() {
   var chartPlace = document.getElementById('my-chart')
   var ctx = chartPlace.getContext('2d');
   var myDoughnutChart = new Chart(ctx, {
-          type: 'doughnut',
-          cutoutPercentage: 50,
-          data: {
-            datasets: [{
-              data: getTotals(),
-              backgroundColor: [
-                  'Red',
-                  'Yellow',
-                  'Blue',
-                  'Purple'
-              ]
-            }],
-            labels: [
-                'Athletics',
-                'Leisure',
-                'Work',
-                'Your Activities'
-            ],
-          }
-        })
-        // options:
-        //   maintainAspectRatio: true,
-      }
-
+    type: 'doughnut',
+    cutoutPercentage: 50,
+    data: {
+      datasets: [{
+        data: getTotals(),
+        backgroundColor: [
+          'Red',
+          'Yellow',
+          'Blue',
+          'Purple'
+        ]
+      }],
+      labels: [
+        'Athletics',
+        'Leisure',
+        'Work',
+        'Your Activities'
+      ],
+    }
+  });
+}
 
 // user able to add activities
 function addActivity(event) {
   event.preventDefault();
   console.log('bob');
-  var e = event.target;
-  console.log('target', e);
-  var name = e.activityfield.value;
+  console.log('target', event.target.name.value);
+  var newActivity = event.target.name.value;
   var li = document.createElement('li');
-  var addedActivity = new Activity(name);
-  console.log (addedActivity);
+  var addedActivity = new Activity(newActivity);
+  console.log ('addedActivity', addedActivity);
   li.innerHTML = addedActivity.name;
   console.log('li', li);
   console.log('ul.innerHTML', ul.innerHTML);
   ul.innerHTML = '<li>' + addedActivity.name + '</li>';
 
   // grabbing li created so it's attached to the object
-  //var clickedActivity =
+  var clickedActivity;
 
-  clickedA.addEventListener('click', function(){
+  clickedActivity.addEventListener('click', function(){
     selectedActivity = activities[9];
     console.log(selectedActivity);
   });
 
-  // grab ul dynamically create an li, inside the li is the text of name -- good stuff pushed up??
-
+  // grab ul dynamically create an li, inside the li is the text of name
 };
 
 var submitter = document.getElementById('submitter');
 form.addEventListener('submit', addActivity);
-
-// for(var i = 0; i < activities.length; i ++){
-//   (function() {
-//       var activity = activities[i];
-//       var liEl = document.createElement('li');
-//       var aEl = document.createElement('a');
-//       aEl.innerText = activities[i].name;
-//       liEl.appendChild(aEl);
-//       liEl.addEventListener('click', function() {
-//         selectedActivity = activity;
-//       })
-//       ul.appendChild(liEl);
-//   }())
-// }
