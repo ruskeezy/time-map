@@ -143,6 +143,14 @@ function addActivity(event) {
   console.log('ul.innerHTML', ul.innerHTML);
   ul.innerHTML = '<li>' + addedActivity.name + '</li>';
 
+  // grabbing li created so it's attached to the object
+  //var clickedActivity =
+
+  clickedA.addEventListener('click', function(){
+    selectedActivity = activities[9];
+    console.log(selectedActivity);
+  });
+
   // grab ul dynamically create an li, inside the li is the text of name -- good stuff pushed up??
 
 };
