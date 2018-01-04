@@ -1,7 +1,6 @@
 'use strict';
 
 // grabbing html elements
-
 var run = document.getElementById('running');
 var lift = document.getElementById('lifting');
 var cycle = document.getElementById('cycling');
@@ -13,13 +12,17 @@ var project = document.getElementById('projects');
 var program = document.getElementById('programming')
 var startbtn = document.getElementById('start-btn');
 var stopbtn = document.getElementById('stop-btn');
+var program = document.getElementById('programming');
+
+
+var form = document.getElementById('the-form');
 
 // global variables
 var activities = [];
 var startTime;
 var stopTime;
-var ul = document.getElementById('activity-list');
 var selectedActivity;
+var ul = document.getElementById('addActivity');
 
 // start function, connected to start button
 function start() {
@@ -37,6 +40,13 @@ function stop(){
     stopTime = null;
     chartMaker();
   }
+  
+function getTotals() {
+  var activityTotals = [];
+  for(var i = 0; i < activities.length; i++) {
+    activityTotals.push(activities[i].total)
+  }
+  return activityTotals
 }
 
 // constructor function
@@ -58,7 +68,7 @@ function getTotals() {
 // instantiation
 new Activity('Running');
 new Activity('Lifting');
-new Activity('Cycling')
+new Activity('Cycling');
 new Activity('TV');
 new Activity('Reading');
 new Activity('Music');
@@ -66,7 +76,9 @@ new Activity('Meetings');
 new Activity('Projects');
 new Activity('Programming');
 
-// click handlers
+console.log('activities', activities);
+
+//click handlers
 run.addEventListener('click', function(){
   selectedActivity = activities[0]
   console.log(selectedActivity);
@@ -105,7 +117,6 @@ program.addEventListener('click', function(){
 })
 startbtn.addEventListener('click', start)
 stopbtn.addEventListener('click', stop)
-
 
 // chart maker
 function chartMaker() {
@@ -162,8 +173,17 @@ function chartMaker() {
         ul.innerHTML = '<li>' + addedActivity.name + '</li>';
       }
 
-        // grabbing li created so it's attached to the object
-        var clickedActivity =
+  clickedA.addEventListener('click', function(){
+    selectedActivity = activities[9];
+    console.log(selectedActivity);
+  });
+
+  // grab ul dynamically create an li, inside the li is the text of name -- good stuff pushed up??
+
+};
+
+var submitter = document.getElementById('submitter');
+form.addEventListener('submit', addActivity);
 
         clickedActivity.addEventListener('click', function(){
           selectedActivity = activities[9];
