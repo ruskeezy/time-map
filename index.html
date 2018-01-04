@@ -12,86 +12,46 @@
     </header>
     <section id="dropdown">
       <ul class="default">
-      <li><a>Athletics
-      <ul>
-      <li><a id="running">Running</a></li>
-      <li><a id="lifting">Lifting</a></li>
-      <li><a id="cycling">Cycling</a></li>
-      </ul>
-      </a></li>
-      <li><a>Leisure
-      <ul>
-      <li><a id="tv">TV</a></li>
-      <li><a id="reading">Reading</a></li>
-      <li><a id="music">Music</a></li>
-      </ul>
-      </a></li>
-      <li><a>Work
-      <ul>
-      <li><a id="meetings">Meetings</a></li>
-      <li><a id="projects">Projects</a></li>
-      <li><a id="programming">Programming</a></li>
-      </ul>
-      </a></li>
-      <li><a>Your Activities
-      <ul id="addActivity">
-      </ul>
-      </a></li>
+        <li><a>Athletics
+          <ul>
+            <li><a id="running">Running</a></li>
+            <li><a id="lifting">Lifting</a></li>
+            <li><a id="cycling">Cycling</a></li>
+          </ul>
+        </a></li>
+        <li><a>Leisure
+          <ul>
+            <li><a id="tv">TV</a></li>
+            <li><a id="reading">Reading</a></li>
+            <li><a id="music">Music</a></li>
+          </ul>
+        </a></li>
+        <li><a>Work
+          <ul>
+            <li><a id="meetings">Meetings</a></li>
+            <li><a id="projects">Projects</a></li>
+            <li><a id="programming">Programming</a></li>
+          </ul>
+        </a></li>
+        <li><a>Your Activities
+          <ul id="addActivity">
+          </ul>
+        </a></li>
       </ul>
     </section>
-    <form id="the-form"
-      class= "button-class">
-      <input name="activityfield">
-      <button
-        class="start-button"
-        type="button"
-        onclick="start()"
-        value="Submit"
-      >
-        Start
-      </button>
-      <button
-        class="stop-button"
-        type="button"
-        onclick="stop()"
-        value="Submit"
-      >
-        Stop
-      </button>
-      <button
-        id="submitter"
-        class="submit-button"
-        type="submit"
-        value="submit"
-      >
-        Submit
-      </button>
-    </form>
-
-
+    <section class= "button-class-one">
+      <button id="start-btn" class="start-button" type="button" value="Submit">Start</button>
+      <button id="stop-btn" class="stop-button" type="button" value="Submit">Stop</button>
+    </section>
     <section class= "button-class">
-      <form id="activity-form">
+      <form id="the-form"
         <label for="Name">Activity Name:</label>
         <input type="text" name="name" placeholder="Enter Activity Name">
-        <button class="submit-button" type="button" onclick="addActivity()" value="Submit">Submit</button>
+        <button id="submitter" class="submit-button" type="submit" value="submit">Submit</button>
       </form>
     </section>
-
-
     <canvas id="my-chart" width='770' height='385'></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-<!-- <ul id="activity-list">
-
-</ul> -->
