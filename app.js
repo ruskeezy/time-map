@@ -162,10 +162,13 @@ function chartMaker() {
         ul.innerHTML = '<li>' + addedActivity.name + '</li>';
       }
 
-        // grabbing li created so it's attached to the object
-        var clickedActivity =
+      localStorage.setItem(JSON.stringify(activities));
+      localStorage.getItem(JSON.parse(activities));
 
-        clickedActivity.addEventListener('click', function(){
-          selectedActivity = activities[9];
-          console.log(selectedActivity);
-        });
+        // grabbing li created so it's attached to the object
+        // var clickedActivity =
+        //
+        // clickedActivity.addEventListener('click', function(){
+        //   selectedActivity = activities[9];
+        //   console.log(selectedActivity);
+        // });

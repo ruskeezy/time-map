@@ -71,21 +71,23 @@ ul li:hover ul li {
 
 #the-form {
   color: rgb(3, 4, 0);
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
-  margin: 0 auto;
+  margin-top: 10px;
   width: 40%;
   margin-left: 30%;
   margin-right: 30%;
-
-
+  text-align: center;
 }
 
 #activity-field {
   padding: 20px;
   font-size: 12px;
   border-radius: 8px;
-  /*margin-right: 10px;*/
+}
+
+span {
+  margin-top: 10px;
 }
 
 .button-class-one {
