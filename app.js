@@ -10,28 +10,18 @@ var music = document.getElementById('music');
 var meeting = document.getElementById('meetings');
 var project = document.getElementById('projects');
 var program = document.getElementById('programming');
-var form = document.getElementById('activity-field');
+
+
+var form = document.getElementById('the-form');
+
 
 // global variables
 var activities = [];
 var startTime;
 var stopTime;
-var ul = document.getElementById('activity-list');
 var selectedActivity;
+var ul = document.getElementById('addActivity');
 
-// start function, connected to start button
-function start() {
-  startTime = Date.now();
-}
-
-// stop function, connected to stop button. converts to seconds
-function stop(){
-  stopTime = Date.now();
-  selectedActivity.total += ((stopTime - startTime) / 1000)
-  console.log('stop', selectedActivity);
-  startTime = null;
-  stopTime = null;
-}
 
 function getTotals() {
   var activityTotals = [];
@@ -51,7 +41,7 @@ function Activity (name) {
 // instantiation
 new Activity('Running');
 new Activity('Lifting');
-new Activity('Cycling')
+new Activity('Cycling');
 new Activity('TV');
 new Activity('Reading');
 new Activity('Music');
@@ -59,7 +49,9 @@ new Activity('Meetings');
 new Activity('Projects');
 new Activity('Programming');
 
-// click handlers
+console.log('activities', activities);
+
+//click handlers
 run.addEventListener('click', function(){
   selectedActivity = activities[0]
   console.log(selectedActivity);
@@ -108,6 +100,29 @@ program.addEventListener('click', function(){
 //
 // form.addEventListener('submit', addActivity);
 
+
+// start function, connected to start button
+function start() {
+  startTime = Date.now();
+}
+
+// stop function, connected to stop button. converts to seconds
+function stop(){
+  stopTime = Date.now();
+  if (!startTime) {
+    console.log('Please push Start');
+  } else {
+    console.log(selectedActivity.total += ((stopTime - startTime) / 1000));
+    startTime = null;
+    stopTime = null;
+  }
+}
+
+
+
+
+
+
 // chart maker
 function chartMaker() {
   var chartPlace = document.getElementById('my-chart')
@@ -138,6 +153,35 @@ function chartMaker() {
       }
 
 
+// user able to add activities
+function addActivity(event) {
+  event.preventDefault();
+  console.log('bob');
+  var e = event.target;
+  console.log('target', e);
+  var name = e.activityfield.value;
+  var li = document.createElement('li');
+  var addedActivity = new Activity(name);
+  console.log (addedActivity);
+  li.innerHTML = addedActivity.name;
+  console.log('li', li);
+  console.log('ul.innerHTML', ul.innerHTML);
+  ul.innerHTML = '<li>' + addedActivity.name + '</li>';
+
+  // grabbing li created so it's attached to the object
+  //var clickedActivity =
+
+  clickedA.addEventListener('click', function(){
+    selectedActivity = activities[9];
+    console.log(selectedActivity);
+  });
+
+  // grab ul dynamically create an li, inside the li is the text of name -- good stuff pushed up??
+
+};
+
+var submitter = document.getElementById('submitter');
+form.addEventListener('submit', addActivity);
 
 // for(var i = 0; i < activities.length; i ++){
 //   (function() {
