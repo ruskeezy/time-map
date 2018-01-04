@@ -1,7 +1,6 @@
 'use strict';
 
 // grabbing html elements
-
 var run = document.getElementById('running');
 var lift = document.getElementById('lifting');
 var cycle = document.getElementById('cycling');
@@ -12,7 +11,9 @@ var meeting = document.getElementById('meetings');
 var project = document.getElementById('projects');
 var program = document.getElementById('programming');
 
+
 var form = document.getElementById('the-form');
+
 
 // global variables
 var activities = [];
@@ -20,6 +21,15 @@ var startTime;
 var stopTime;
 var selectedActivity;
 var ul = document.getElementById('addActivity');
+
+
+function getTotals() {
+  var activityTotals = [];
+  for(var i = 0; i < activities.length; i++) {
+    activityTotals.push(activities[i].total)
+  }
+  return activityTotals
+}
 
 // constructor function
 function Activity (name) {
@@ -79,6 +89,17 @@ program.addEventListener('click', function(){
   console.log(selectedActivity);
 })
 
+// form creates a new object
+// function addActivity(event){
+//   event.preventDefault();
+//
+//   var name = event.target.name.value;
+//   new Activity(name);
+//   form.reset();
+// }
+//
+// form.addEventListener('submit', addActivity);
+
 
 // start function, connected to start button
 function start() {
@@ -101,32 +122,36 @@ function stop(){
 
 
 
+
+// chart maker
 function chartMaker() {
   var chartPlace = document.getElementById('my-chart')
   var ctx = chartPlace.getContext('2d');
-  var myDoughnutChart =
-      new Chart(ctx, {
-      type: 'doughnut',
-      cutoutPercentage: 50,
-      data: {
-      datasets: [{
-          data: [10, 20, 30]
-      }],
+  var myDoughnutChart = new Chart(ctx, {
+          type: 'doughnut',
+          cutoutPercentage: 50,
+          data: {
+            datasets: [{
+              data: getTotals(),
+              backgroundColor: [
+                  'Red',
+                  'Yellow',
+                  'Blue',
+                  'Purple'
+              ]
+            }],
+            labels: [
+                'Athletics',
+                'Leisure',
+                'Work',
+                'Your Activities'
+            ],
+          }
+        })
+        // options:
+        //   maintainAspectRatio: true,
+      }
 
-      // These labels appear in the legend and in the tooltips when hovering different arcs
-      labels: [
-          'Red',
-          'Yellow',
-          'Blue'
-      ],
-    },
-    options: {
-      responsive: false
-    }
-  });
-}
-
-chartMaker();
 
 // user able to add activities
 function addActivity(event) {
