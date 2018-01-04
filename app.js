@@ -9,11 +9,13 @@ var read = document.getElementById('reading');
 var music = document.getElementById('music');
 var meeting = document.getElementById('meetings');
 var project = document.getElementById('projects');
+var program = document.getElementById('programming')
+var startbtn = document.getElementById('start-btn');
+var stopbtn = document.getElementById('stop-btn');
 var program = document.getElementById('programming');
 var form = document.getElementById('the-form');
 var startbtn = document.getElementById('start-btn');
 var stopbtn = document.getElementById('stop-btn');
-
 
 // global variables
 var activities = [];
@@ -22,7 +24,23 @@ var stopTime;
 var selectedActivity;
 var ul = document.getElementById('addActivity');
 
+// start function, connected to start button
+function start() {
+  startTime = Date.now();
+}
 
+// stop function, connected to stop button. converts to seconds
+function stop(){
+  stopTime = Date.now();
+  if (!startTime) {
+    console.log('Please push Start');
+  } else {
+    console.log(selectedActivity.total += ((stopTime - startTime) / 1000));
+    startTime = null;
+    stopTime = null;
+    chartMaker();
+  }
+  
 function getTotals() {
   var activityTotals = [];
   for(var i = 0; i < activities.length; i++) {
@@ -36,6 +54,15 @@ function Activity (name) {
   this.name = name;
   this.total = 0;
   activities.push(this);
+}
+
+// data for chart
+function getTotals() {
+  var activityTotals = [];
+  for(var i = 0; i < activities.length; i++) {
+    activityTotals.push(activities[i].total)
+  }
+  return activityTotals
 }
 
 // instantiation
@@ -107,12 +134,16 @@ function stop(){
     stopTime = null;
   }
 }
+})
+startbtn.addEventListener('click', start)
+stopbtn.addEventListener('click', stop)
 
 // chart maker
 function chartMaker() {
   var chartPlace = document.getElementById('my-chart')
   var ctx = chartPlace.getContext('2d');
   var myDoughnutChart = new Chart(ctx, {
+
     type: 'doughnut',
     cutoutPercentage: 50,
     data: {
@@ -152,6 +183,56 @@ function addActivity(event) {
   // grabbing li created so it's attached to the object
   var clickedActivity;
 
+          type: 'doughnut',
+          cutoutPercentage: 50,
+          data: {
+            datasets: [{
+              data: getTotals(),
+              backgroundColor: [
+                  'rgba(184, 39, 39, 0.8)',
+                  'rgba(208, 206, 46, 0.8)',
+                  'rgba(34, 63, 255, 0.8)',
+                  'rgba(136, 39, 204, 0.8)',
+                  'rgba(122, 28, 54, 0.8)',
+                  'rgba(50, 221, 41, 0.8)',
+                  'rgba(251, 91, 3, 0.8)',
+                  'rgba(77, 207, 183, 0.8)',
+                  'rgba(254, 77, 167, 0.8)',
+
+              ]
+            }],
+            labels: [
+                'Running',
+                'Lifting',
+                'Cycling',
+                'TV',
+                'Reading',
+                'Music',
+                'Meetings',
+                'Projects',
+                'Programming'
+            ],
+          }
+        })
+        // options:
+        //   maintainAspectRatio: true,
+      }
+      // user able to add activities
+      function addActivity(event) {
+        event.preventDefault();
+        console.log('bob');
+        var e = event.target;
+        console.log('target', e);
+        var name = e.activityfield.value;
+        var li = document.createElement('li');
+        var addedActivity = new Activity(name);
+        console.log (addedActivity);
+        li.innerHTML = addedActivity.name;
+        console.log('li', li);
+        console.log('ul.innerHTML', ul.innerHTML);
+        ul.innerHTML = '<li>' + addedActivity.name + '</li>';
+      }
+
   clickedActivity.addEventListener('click', function(){
     selectedActivity = activities[9];
     console.log(selectedActivity);
@@ -162,3 +243,9 @@ function addActivity(event) {
 
 var submitter = document.getElementById('submitter');
 form.addEventListener('submit', addActivity);
+
+
+        clickedActivity.addEventListener('click', function(){
+          selectedActivity = activities[9];
+          console.log(selectedActivity);
+        });
