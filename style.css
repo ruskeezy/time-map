@@ -71,7 +71,7 @@ ul li:hover ul li {
 
 #the-form {
   color: rgb(3, 4, 0);
-  font-size: 24px;
+  font-size: 35px;
   font-weight: bold;
   margin-top: 10px;
   width: 40%;
@@ -126,6 +126,7 @@ span {
   border-radius: 8px;
   display: inline;
   float: left;
+  margin-bottom: 20px;
 }
 
 .stop-button {
@@ -138,6 +139,7 @@ span {
   border-radius: 8px;
   display: inline;
   float: left;
+  margin-bottom: 20px;
 }
 
 .start-button:hover {

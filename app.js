@@ -13,6 +13,7 @@ var project = document.getElementById('projects');
 var program = document.getElementById('programming')
 var startbtn = document.getElementById('start-btn');
 var stopbtn = document.getElementById('stop-btn');
+var form = document.getElementById('the-form');
 
 // global variables
 var activities = [];
@@ -149,26 +150,19 @@ function chartMaker() {
       // user able to add activities
       function addActivity(event) {
         event.preventDefault();
-        console.log('bob');
-        var e = event.target;
-        console.log('target', e);
-        var name = e.activityfield.value;
+        var newActivity = event.target.name.value;
         var li = document.createElement('li');
-        var addedActivity = new Activity(name);
-        console.log (addedActivity);
+        var addedActivity = new Activity(newActivity);
         li.innerHTML = addedActivity.name;
-        console.log('li', li);
         console.log('ul.innerHTML', ul.innerHTML);
-        ul.innerHTML = '<li>' + addedActivity.name + '</li>';
-      }
-
-      localStorage.setItem(JSON.stringify(activities));
-      localStorage.getItem(JSON.parse(activities));
+        ul.innerHTML = '<li id="usersActivity">' + addedActivity.name + '</li>';
 
         // grabbing li created so it's attached to the object
-        // var clickedActivity =
-        //
-        // clickedActivity.addEventListener('click', function(){
-        //   selectedActivity = activities[9];
-        //   console.log(selectedActivity);
-        // });
+      var usersActivity = document.getElementById('usersActivity');
+      usersActivity.addEventListener('click', function(){
+          selectedActivity = activities[9];
+        });
+      };
+
+      var submitter = document.getElementById('submitter');
+      form.addEventListener('submit', addActivity);
