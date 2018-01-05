@@ -19,7 +19,7 @@ var form = document.getElementById('the-form');
 var activities = [];
 var startTime;
 var stopTime;
-var ul = document.getElementById('activity-list');
+var ul = document.getElementById('addActivity');
 var selectedActivity;
 
 // start function, connected to start button
@@ -128,6 +128,7 @@ function chartMaker() {
                   'rgba(251, 91, 3, 0.8)',
                   'rgba(77, 207, 183, 0.8)',
                   'rgba(254, 77, 167, 0.8)',
+                  'rgba(45, 44, 42, 0.8)'
 
               ]
             }],
@@ -140,7 +141,8 @@ function chartMaker() {
                 'Music',
                 'Meetings',
                 'Projects',
-                'Programming'
+                'Programming',
+                'My Activity'
             ],
           }
         })
